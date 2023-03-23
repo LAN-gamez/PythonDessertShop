@@ -1,5 +1,4 @@
 
-
 tax_rate = 0.07
 
 
@@ -16,18 +15,43 @@ class Candy:
         return self.total_cost() * tax_rate
 
 
+class Cookies:
+
+    def __init__(self, dozen):
+        self.dozen = dozen
+    PRICE_PER_DOZEN = 625
+
+    def total_cost(self):
+        return self.dozen * self.PRICE_PER_DOZEN
+
+    def calculate_tax(self):
+        return self.total_cost() * tax_rate
+
+
+class IceCream:
+
+    def __init__(self, scoop):
+        self.scoop = scoop
+    PRICE_PER_SCOOP = 170
+
+    def total_cost(self):
+        return self.scoop * self.PRICE_PER_SCOOP
+
+    def calculate_tax(self):
+        return self.total_cost() * tax_rate
+
+
+class MenuItem:
+    menu_item = []
+
+
 class Sundae(MenuItem):
-    class HotFudge:
-        cost = 125
+    PRICEFUDGE = 125
+    PRICESTRAWBERRY = 75
+    PRICECARAMEL = 50
+    PRICEPEANUT = 35
+    PRICECOCONUT = 20
 
-    class CarmelSyrup:
-        cost = 75
-
-    class Peanuts:
-        cost = 35
-
-    class Coconut:
-        cost = 20
 
     def __init__(self):
         self.toppings = []
@@ -36,7 +60,6 @@ class Sundae(MenuItem):
         self.toppings.append(topping)
 
     def calculate_cost(self):
-        total = 340
-        for topping in self.toppings:
-            total += topping
+        cost = IceCream.__init__(scoop=2)
+        if hotFudge:
 
